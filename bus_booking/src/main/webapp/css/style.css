@@ -1,0 +1,29 @@
+.bg-custom{
+	background:#1565c0
+}
+
+
+.btn-outline-success:hover {
+      color: white;
+      background-color: orange;
+      border-color: orange;
+    }
+    
+.btn-outline-success {
+      color: white; /* Change text color to red */
+      border-color: white; /* Optional: change border color to red */
+    }
+    
+ .navbar-custom .nav-item:hover .nav-link{
+  	background: white;
+  	color: black;
+  	border-radius:10px;
+  
+  } 
+  
+.div-color{
+	background-image: linear-gradient(to left bottom, #051937, #402c5a, #803b71, #c14c76, #f66b6b);
+	height: 600px;
+}
+
+
