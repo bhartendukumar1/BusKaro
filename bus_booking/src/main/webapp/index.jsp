@@ -1,5 +1,8 @@
+
 <%@ page import= "java.sql.Connection" %>
 <%@ page import= "com.Db.DBConnect" %>
+
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -19,12 +22,12 @@
 <title>Home</title>
 <%@include file="all_component/allcss.jsp"%>
 </head>
+
 <body>
 	<%@include file="all_component/navbar.jsp"%>
-	
-	
-	
-	
+<body>
+	<%@include file="all_component/navbar.jsp"%>
+
 	<div class="container-fluid back-img d-flex align-items-center ps-5">
 	<div class=" d-flex justify-content-between">
 		<div style="margin-top:100px;">
