@@ -48,7 +48,7 @@ body {
 	<%@include file="all_component/navbar.jsp"%>
 	<div class="container-flex">
 		<div class="image-container">
-			<img src="images\bookbg1.png"  style="width: 600px;">
+			<img src="images\bookbg1.png" style="width: 600px;">
 		</div>
 		<div class="registration-container">
 			<div class="card mt-4">
@@ -56,25 +56,51 @@ body {
 					<i class='fas fa-user-astronaut fa-3x'></i>
 					<h4>Registration</h4>
 				</div>
+
+				 <%
+                String regMsg = (String) session.getAttribute("reg-success");
+
+                if (regMsg != null) {
+                %>
+                <div class="alert alert-success" role="alert">
+                    <p><%=regMsg%></p>
+                    <p>To login, <a href="login.jsp" class="alert-link">click here</a>.</p>
+                </div>
+                <%
+                session.removeAttribute("reg-success");
+                }
+                %>
+
+                <%
+                String failedMsg = (String) session.getAttribute("failed-msg");
+
+                if (failedMsg != null) {
+                %>
+                <div class="alert alert-danger" role="alert"><%=failedMsg%></div>
+                <%
+                session.removeAttribute("failed-msg");
+                }
+                %>
+
 				<div class="card-body">
 					<form action="UserServlet" method="post">
-							<div class="mb-3">
-								<label for="fullName" class="form-label">Enter Full Name</label>
-								<input type="text" class="form-control" id="fullName"
-									name="fname">
-							</div>
-							<div class="mb-3">
-								<label for="email" class="form-label">Email address</label> <input
-									type="email" class="form-control" id="email"
-									aria-describedby="emailHelp" name="uemail">
-							</div>
-							<div class="mb-3">
-								<label for="password" class="form-label">Password</label> <input
-									type="password" class="form-control" id="password"
-									name="upassword">
-							</div>
-							<button type="submit" class="btn btn-primary">Register</button>
-						</form>
+						<div class="mb-3">
+							<label for="fullName" class="form-label">Enter Full Name</label>
+							<input type="text" class="form-control" id="fullName"
+								name="fname">
+						</div>
+						<div class="mb-3">
+							<label for="email" class="form-label">Email address</label> <input
+								type="email" class="form-control" id="email"
+								aria-describedby="emailHelp" name="uemail">
+						</div>
+						<div class="mb-3">
+							<label for="password" class="form-label">Password</label> <input
+								type="password" class="form-control" id="password"
+								name="upassword">
+						</div>
+						<button type="submit" class="btn btn-primary">Register</button>
+					</form>
 				</div>
 			</div>
 		</div>
