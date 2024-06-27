@@ -1,18 +1,16 @@
-
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
-
 <meta charset="ISO-8859-1">
-<title>login</title>
+<title>Login</title>
 </head>
 <body>
-	<%@include file="all_component/navbar.jsp"%>
-	<%@include file="all_component/allcss.jsp"%>
-	
-	  <div class="container-fluid div-color">
+    <%@include file="all_component/navbar.jsp"%>
+    <%@include file="all_component/allcss.jsp"%>
+    
+    <div class="container-fluid div-color">
         <div class="row">
             <div class="col-md-4 offset-md-4">
                 <div class="card mt-4">
@@ -21,37 +19,34 @@
                         <h4>Login</h4>
                     </div>
                     <% 
-                    
-                    	String invalidMsg = (String)session.getAttribute("login-failed");
-                    
-                    	 if (invalidMsg != null){
+                        String invalidMsg = (String)session.getAttribute("login-failed");
+                        if (invalidMsg != null){
                     %>
-                    	
                     <div class="alert alert-danger" role="alert"><%=invalidMsg %></div>
-                      	<%
-                      	session.removeAttribute("login-failed");
-                    	 }
-                      	%>
-                    
-                    
+                    <%
+                        session.removeAttribute("login-failed");
+                        }
+                    %>
                     <div class="card-body">
-                        <form action = "loginServlet" method="post">
-                          
+                        <form action="loginServlet" method="post">
                             <div class="mb-3">
                                 <label for="email" class="form-label">Enter Email</label>
-                                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name = "uemail">
+                                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="uemail">
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Enter Password</label>
-                                <input type="password" class="form-control" id="password" name = "upassword">
+                                <input type="password" class="form-control" id="password" name="upassword">
                             </div>
                             <button type="submit" class="btn btn-primary">Login</button>
                         </form>
+                    </div>
+                    <div class="card-footer text-center">
+                        <p class="mb-0">Don't have an account? <a href="registration.jsp" class="text-primary">Register here</a></p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-<%@include file="all_component/footer.jsp"%>
+    <%@include file="all_component/footer.jsp"%>
 </body>
 </html>
