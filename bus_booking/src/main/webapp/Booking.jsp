@@ -1,37 +1,32 @@
 <%@page import="java.util.Hashtable"%>
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
-<%
-    // Retrieve bus_info from request attribute
-    Hashtable<String, String> bus_info = (Hashtable<String, String>) request.getAttribute("bus_info");
-    if (bus_info == null) {
-        // Handle the case where bus_info is null
-        // You might redirect or show an error message
-        throw new IllegalArgumentException("bus_info attribute not found or null");
-    }
-
-    String busNo = bus_info.get("busNo");
-    String busName = bus_info.get("busName");
-    String busFare = bus_info.get("busFare");
-    String destination = bus_info.get("destination");
-    String start = bus_info.get("start");
-    String bookDate = bus_info.get("bookDate");
-%>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Passenger Booking Information</title>
-    <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+    <%@include file="all_component/navbar.jsp"%>
+    <%@include file="all_component/allcss.jsp"%>
     <div class="container mt-5">
         <h2>Passenger Booking Information</h2>
+        <%
+        Hashtable<String, String> bus_info = (Hashtable<String, String>) request.getAttribute("bus_info");
+        if (bus_info == null) {
+            throw new IllegalArgumentException("bus_info attribute not found or null");
+        }
+        
+        String busNo = bus_info.get("busNo");
+        String busName = bus_info.get("busName");
+        String busFare = bus_info.get("busFare");
+        String destination = bus_info.get("destination");
+        String start = bus_info.get("start");
+        String bookDate = bus_info.get("bookDate");
+        %>
         <form action="passenger" method="post">
             <div class="row">
                 <div class="col-6 form-group">
@@ -43,12 +38,12 @@
                     <input type="text" class="form-control" id="input2" name="busName" readonly value="<%=busName %>">
                 </div>
                 <div class="col-10 form-group">
-                    <label for="input3">Full Name:</label>
+                    <label for="fullname">Full Name:</label>
                     <input type="text" class="form-control" id="fullname" name="pessName" required>
                 </div>
                 <div class="col-6 form-group">
-                    <label for="input4">Age:</label>
-                    <input type="number" class="form-control" id="age" name="age" required onchange=(e)=>{formValidation(e)}>
+                    <label for="age">Age:</label>
+                    <input type="number" class="form-control" id="age" name="age" required onchange="formValidation(event)">
                 </div>
                 <div class="col-6 form-group">
                     <label for="input6">Bus Fare:</label>
@@ -71,21 +66,19 @@
         </form>
     </div>
     
-    <script type="text/javascript">
-    const formValidation = (e)=>{
-        switch(e.target.name){
+    <script>
+    function formValidation(event) {
+        switch (event.target.name) {
             case 'age':
-                if(e.target.value<1 || e.target.value>100) {
-                    alert("Enter Age between 1 to 100")
-                    name.focus();
+                if (event.target.value < 1 || event.target.value > 100) {
+                    alert("Enter Age between 1 to 100");
+                    event.target.focus();
                 }
-                break;  
+                break;
         }
     }
-    
     </script>
 
-    <!-- Bootstrap JS and dependencies (jQuery and Popper.js) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

@@ -1,10 +1,11 @@
 package com.DAO;
+import com.User.UserDetails;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import com.User.UserDetails;
+
 
 public class UserDAO {
 	private Connection conn = null;
@@ -35,8 +36,9 @@ public class UserDAO {
 		return f;
 	}
 
-	public boolean loginUser(UserDetails us) {
-		boolean f = false;
+	public String loginUser(UserDetails us) {
+		System.out.println(us.getEmail() +" -->>");
+		String str = "";
 		try {
 			String query = "select * from user where email=? and password=?";
 			PreparedStatement ps = conn.prepareStatement(query);
@@ -45,12 +47,12 @@ public class UserDAO {
 			ResultSet rs = ps.executeQuery();
 
 			if (rs.next()) {
-				f = true;
+				str = rs.getString("name");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
-		return f;
+		return str;
 	}
 }

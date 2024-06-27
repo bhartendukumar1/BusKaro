@@ -34,21 +34,21 @@ public class BookingControl extends HttpServlet {
 
         // Getting session attribute (example: "Id" assumed to be user's email)
         HttpSession session = request.getSession();
-        String email = (String) session.getAttribute("Id");
-        System.out.println("email: " + email);
+        String name = (String) session.getAttribute("name");
 
         // Forwarding based on session attribute presence
         RequestDispatcher dispatcher1 = request.getRequestDispatcher("Booking.jsp");
         RequestDispatcher dispatcher2 = request.getRequestDispatcher("login.jsp");
         
         try {
-            if (email != null) {
+            if (name != null) {
                 // If session attribute exists, forward to Booking.jsp with bus_info
                 request.setAttribute("bus_info", bus_info);
                 dispatcher1.forward(request, response);
             } else {
                 // If session attribute does not exist, forward to login.jsp
                 dispatcher2.forward(request, response);
+                session.setAttribute("booking", "true");
             }
         } catch (Exception e) {
             // Handle any exceptions

@@ -24,6 +24,7 @@ public class UserServlet extends HttpServlet {
         String email = request.getParameter("uemail");
         String password = request.getParameter("upassword");
         
+        
         // Creating a UserDetails object and setting its properties
         UserDetails userDetails = new UserDetails();
         userDetails.setName(name);

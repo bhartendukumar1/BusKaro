@@ -19,8 +19,16 @@
         </li>
       </ul>
       <form class="d-flex">
-        <a href="login.jsp" class="btn btn-outline-success m-2" type="submit">Login</a>
-        <a href="registration.jsp" class="btn btn-outline-success m-2" type="submit">Register</a>
+         <% String name = (String)session.getAttribute("name");
+         if(name != null){
+         %>
+         <h3 class="text-info fs-3 fw-3 my-auto"><%=name %></h3>
+         <a href="logout.jsp" class="btn btn-outline-danger m-2" type="submit">Logout</a>
+         <%}else{ %>
+          <a href="login.jsp" class="btn btn-outline-success m-2" type="submit">Login</a>
+          <a href="registration.jsp" class="btn btn-outline-success m-2" type="submit">Register</a>
+         <%} %>
+       
       </form>
     </div>
   </div>

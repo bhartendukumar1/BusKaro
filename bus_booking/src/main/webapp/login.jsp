@@ -28,17 +28,7 @@
                         }
                     %>
                     <div class="card-body">
-
                         <form action="loginServlet" method="post">
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Enter Email</label>
-                                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="uemail">
-                            </div>
-                            <div class="mb-3">
-                                <label for="password" class="form-label">Enter Password</label>
-                                <input type="password" class="form-control" id="password" name="upassword">
-
-                        <form action="VerifyLogin" method="post">
                             <div class="mb-3">
                                 <label for="email" class="form-label">Enter Email</label>
                                 <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
