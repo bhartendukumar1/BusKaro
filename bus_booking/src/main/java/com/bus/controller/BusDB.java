@@ -37,20 +37,18 @@ public class BusDB {
 			while(res.next()) {
 				Hashtable<String, String>v1 = new Hashtable<String, String>();
 				v1.put("busNo",res.getString("busNo"));
+				v1.put("busName",res.getString("busName"));
 				v1.put("busDepartDate",res.getString("busDepartDate"));
 				v1.put("totSeat",res.getString("totSeat"));
 				v1.put("avlSeat",res.getString("avlSeat"));
 				v1.put("start",res.getString("start"));
 				v1.put("destination",res.getString("destination"));
 				v1.put("busFare",res.getString("busFare"));
-				//System.out.println(v1);
 				hash1.put(i, v1);
 				i++;
 			}  
 			
 		}catch(SQLException e) { System.out.print(e.getMessage());}
-		
-		System.out.println("DB\n"+hash1);
 		
 		return hash1;
 	}

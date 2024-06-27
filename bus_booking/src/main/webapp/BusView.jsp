@@ -22,6 +22,7 @@
         <thead>
             <tr class="table-primary">
                 <th scope="col">Bus No.</th>
+                <th scope="col">Bus Name</th>
                 <th scope="col">Depart Date</th>
                 <th scope="col">Capacity</th>
                 <th scope="col">Available</th>
@@ -36,9 +37,10 @@
             for(int i=1; i<=hash1.size(); i++){
             	String bus = hash1.get(i).get("bus_no");
             %>
-            <form action="passenger" method=post>
+            <form action="booking" method=post>
               <tr class="table-info">
                 <td><input readonly class="form-control" name="busNo" value=<%= hash1.get(i).get("busNo") %>></td>
+                <td><input readonly class="form-control" name="busName" value=<%= hash1.get(i).get("busName") %>></td>
                 <td><input readonly class="form-control" name="busDepartDate" value=<%= hash1.get(i).get("busDepartDate") %>></td>
                 <td><input readonly class="form-control" name="totSeat" value=<%= hash1.get(i).get("totSeat") %>></td>
                 <td><input readonly class="form-control" name="avlSeat" value=<%= hash1.get(i).get("avlSeat") %>></td>
