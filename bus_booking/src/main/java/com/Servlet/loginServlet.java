@@ -31,7 +31,7 @@ public class loginServlet extends HttpServlet {
 		
 		if(loginSucess)
 		{
-			response.sendRedirect("home.jsp");
+			response.sendRedirect("index.jsp");
 		}
 		else {
 			HttpSession session = request.getSession();
