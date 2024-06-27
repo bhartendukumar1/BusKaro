@@ -9,15 +9,13 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="index.jsp"><i class='fas fa-house-user'></i>Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"><i class='fas fa-book-open'></i>Courses</a>
-        </li>
+        
       
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class='fas fa-info-circle'></i>About Us</a>
+          <a class="nav-link" href="#"><i class='fas fa-ticket-alt'></i>Bookings</a>
         </li>
          <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
+          <a class="nav-link" href="#">Contact Us</a>
         </li>
       </ul>
       <form class="d-flex">
