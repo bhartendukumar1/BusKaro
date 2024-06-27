@@ -32,8 +32,8 @@
 		<div style="margin-top:100px;">
 		<h1 class="text-dark">BusDekho</h1>
 		<h2 class="text-dark">Your Ticket, Just a Click Away!</h2>
-		<a href="login.jsp" class="btn btn-light"><i class="fa-solid fa-right-to-bracket"></i>Login</a>
-		<a href="registration.jsp" class="btn btn-light">Register</a>
+		<a href="login.jsp" class="btn btn-light"><i class="fa-solid fa-right-to-bracket"></i>Book Now</a>
+		<!-- <a href="registration.jsp" class="btn btn-light">Register</a> -->
 		</div>
 		<img src="images/Designer.png"/ style="width:50%;">
 	</div>
