@@ -32,7 +32,19 @@
 		<div style="margin-top:100px;">
 		<h1 class="text-dark">BusDekho</h1>
 		<h2 class="text-dark">Your Ticket, Just a Click Away!</h2>
-		<a href="login.jsp" class="btn btn-light"><i class="fa-solid fa-right-to-bracket"></i>Book Now</a>
+		<form action="findBus" method="post" class="row g-3">
+           <div class="col-auto">
+             <label for="start_point" class="visually-hidden fs-4">From</label>
+             <input type="text" class="form-control fs-4" id="start_point" name="start" value="" placeholder="Form">
+           </div>
+           <div class="col-auto">
+             <label for="destination" class="visually-hidden fs-4">Destination</label>
+             <input type="text" class="form-control fs-4" id="destination" name="destination" placeholder="Destination">
+           </div>
+           <div class="col-auto">
+             <button type="submit" class="btn btn-primary mb-3 px-4 fs-4">Find Bus</button>
+           </div>
+         </form>
 		<!-- <a href="registration.jsp" class="btn btn-light">Register</a> -->
 		</div>
 		<img src="images/Designer.png"/ style="width:50%;">
