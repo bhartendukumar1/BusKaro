@@ -32,7 +32,10 @@
 		<div style="margin-top:100px;">
 		<h1 class="text-dark">BusDekho</h1>
 		<h2 class="text-dark">Your Ticket, Just a Click Away!</h2>
+
 		<form action="findBus" method="post" class="row g-3">
+
+
            <div class="col-auto">
              <label for="start_point" class="visually-hidden fs-4">From</label>
              <input type="text" class="form-control fs-4" id="start_point" name="start" value="" placeholder="Form">
@@ -45,7 +48,10 @@
              <button type="submit" class="btn btn-primary mb-3 px-4 fs-4">Find Bus</button>
            </div>
          </form>
+
 		<!-- <a href="registration.jsp" class="btn btn-light">Register</a> -->
+
+
 		</div>
 		<img src="images/Designer.png"/ style="width:50%;">
 	</div>
