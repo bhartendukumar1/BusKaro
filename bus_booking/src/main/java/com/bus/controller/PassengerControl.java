@@ -46,7 +46,9 @@ public class PassengerControl extends HttpServlet {
 		
 		PrintWriter out  = response.getWriter();
 		
-		if(temp == true) out.println("<h1>Ticket Booked Successfully.</h1>");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("Acknowledge.jsp");
+		
+		if(temp == true) dispatcher.forward(request, response);
 		else out.println("<h1>Ticket Booking Failed.</h1>");
 	}
 		
